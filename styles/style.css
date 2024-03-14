@@ -1,0 +1,158 @@
+/* common values stored in variable in hierarchically topmost element HTML but with higher specificity */
+:root {
+
+}
+
+/* wildcard selector for css reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Heebo", "Poppins", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    color: #21243D;
+}
+
+body > div {
+    width: 100%;
+}
+
+.container {
+    display: block;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+#header .container{
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 40vw;
+        text-align: center;
+        background-color: #f5f5f5;
+
+        a:first-child {
+            margin-top: 3rem
+        }
+
+        a {
+            font-weight: 500;
+            font-size: 20px;
+            text-decoration: none;
+            color: #000;
+            display: block;
+            padding: 1rem 0;
+        }
+    };
+
+    .menu-hamburger.open + nav {
+        display: block;
+        transition: display 2s ease-out;
+    }
+}
+
+.menu-hamburger {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    z-index: 1;
+}
+
+.menu-hamburger:hover {
+    background-color: #f5f5f5;
+    z-index: 2;
+    box-shadow: 2 3 10% #000;
+}
+
+p {
+    font-weight: 400;
+    line-height: 23.5px;
+}
+
+h3 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 38.10px;
+}
+
+#hero .container {
+    display: flex;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    flex-direction: column;
+    align-items: center;
+    .intro {
+        text-align: center;
+        h1 {
+            font-size: 44px;
+            font-weight: 700;
+            line-height: 60px;
+        }
+        button {
+            background-color: #FF6464;
+            color: #fff;
+            font-size: 20px;
+            padding: 0.5rem 1.2rem;
+            border: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+    .intro > * {
+        margin-top: 2rem;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    /* same structure because of specificity */
+    #header .container{
+        nav {
+            background-color: unset;
+            display: block;
+            position: relative;
+            height: unset;
+            width: 100%;
+            text-align: right;
+            a {
+                display: inline-block;
+                padding: 1rem;
+            }
+            a:first-child {
+                margin: 0;
+            }
+        }
+    }
+
+    .menu-hamburger {
+        display: none;
+    }
+
+    #hero .container {
+        flex-direction: row-reverse;
+        .photo {
+            margin-left: 1.2rem;
+        }
+        .intro {
+            text-align: initial;
+            margin-right: 1.2rem;
+            h1 {
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 40px;
+            }
+        }
+        .intro > * {
+            margin-top: 2rem;
+        }
+    }
+
+}
