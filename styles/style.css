@@ -30,7 +30,7 @@ body > div {
 
     nav {
         display: none;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         height: 100vh;
@@ -60,7 +60,7 @@ body > div {
 
 .menu-hamburger {
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     padding: 1rem;
@@ -105,10 +105,60 @@ h3 {
             border: none;
             font-weight: 500;
             cursor: pointer;
+            border-radius: 4px;
         }
     }
     .intro > * {
         margin-top: 2rem;
+    }
+}
+
+#posts {
+    background-color: #EDF7FA;
+    .container {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        .section-heading {
+            display: flex;
+            padding-bottom: .5rem;
+            justify-content: center;
+            label {
+                display: block;
+                font-size: 22px;
+            }
+            a {
+                display: none;
+                text-decoration: none;
+                color: #00A8CC;
+            }
+        }
+        .section-posts {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            article {
+                width: 47%;
+                max-width: 20rem;
+                min-width: 15rem;
+                background-color: #fff;
+                padding: 1.5rem 1rem;
+                border-radius: 4px;
+                margin: .5rem .5rem;
+            }
+            .article-heading {
+                padding-bottom: 1rem;
+            }
+            .article-description {
+                padding-top: 1rem;
+            }
+            .article-time {
+                padding-right: 1rem;
+                border-right: 1px solid #000;
+            }
+            .article-category {
+                padding-left: 1rem;
+            }
+        }
     }
 }
 
@@ -152,6 +202,31 @@ h3 {
         }
         .intro > * {
             margin-top: 2rem;
+        }
+    }
+
+    #posts {
+        background-color: #EDF7FA;
+        .container {
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+            .section-heading {
+                justify-content: space-between;
+                a {
+                    display: block;
+                }
+            }
+            .section-posts {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                article:first-of-type {
+                    margin-left: 0;
+                }
+                article:last-of-type {
+                    margin-right: 0;
+                }
+            }
         }
     }
 
